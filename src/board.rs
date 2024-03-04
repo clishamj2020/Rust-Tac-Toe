@@ -20,7 +20,7 @@ impl Board {
     }
 
     pub fn render_board(&mut self) {
-        println!("{}", BUFFER_STRING);
+        print!("{}", BUFFER_STRING);
 
         for i in 0..9 {
             if (i + 1) % 3 != 0 {
@@ -32,7 +32,7 @@ impl Board {
                 }
             }
         }
-        println!("{}", BUFFER_STRING);
+        print!("{}", BUFFER_STRING);
     }
 
     pub fn change_tile_value(&mut self, tile_number: usize, val: String) -> () {
@@ -77,8 +77,8 @@ impl Board {
     }
 
     pub fn render_exit_message(&mut self) -> () {
-        println!("{}", BUFFER_STRING);
+        print!("{}", BUFFER_STRING);
         println!("All Done! Thanks for playing :)");
-        println!("{}", BUFFER_STRING);
+        print!("{}", BUFFER_STRING);
     }
 }

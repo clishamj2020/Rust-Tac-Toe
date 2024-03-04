@@ -36,7 +36,7 @@ pub fn tic_tac_toe() {
                 player_x.turn = true;
                 player_o.turn = false;
             } else if change_players == "N" {
-                println!("{}", BUFFER_STRING);
+                print!("{}", BUFFER_STRING);
                 println!("No worries, let's begin!");
                 let tmp_turn = player_x.turn;
                 player_x.turn = player_o.turn;
@@ -77,7 +77,7 @@ pub fn tic_tac_toe() {
                 let who_won = board.is_win();
 
                 if who_won == 1 {
-                    println!("{}", BUFFER_STRING);
+                    print!("{}", BUFFER_STRING);
                     println!("{}, won the game! Great job :)", current_name);
                     if current_name == player_x.player_name {
                         scoreboard.player1_score += 1;
@@ -89,7 +89,7 @@ pub fn tic_tac_toe() {
                     board = Board::new();
                     break;
                 } else if who_won == -1 {
-                    println!("{}", BUFFER_STRING);
+                    print!("{}", BUFFER_STRING);
                     println!(
                         "The game ended in a tie. Nice try {} & {}!",
                         player_x.player_name, player_o.player_name
@@ -113,7 +113,7 @@ pub fn tic_tac_toe() {
         if play_again == "N" {
             break;
         } else if play_again == "Y" {
-            println!("{}", BUFFER_STRING);
+            print!("{}", BUFFER_STRING);
             println!("New Game!!!");
             new_game = true;
         }

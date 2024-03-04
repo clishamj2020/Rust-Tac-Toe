@@ -23,7 +23,7 @@ impl Scoreboard {
     }
 
     pub fn render_scoreboard(&self) {
-        println!("{}", BUFFER_STRING);
+        print!("{}", BUFFER_STRING);
         println!("{:<15} | {:<15}", self.player1_name, self.player2_name);
         println!("{:<15} | {:<15}", self.player1_score, self.player2_score);
     }
