@@ -1,7 +1,5 @@
 use crate::constants::{BOARD_HORIZONTAL_LINE, BUFFER_STRING};
 use crate::tile::Tile;
-
-// ... rest of the code ...
 pub struct Board {
     pub tiles: Vec<Tile>,
 }
@@ -35,7 +33,7 @@ impl Board {
         print!("{}", BUFFER_STRING);
     }
 
-    pub fn change_tile_value(&mut self, tile_number: usize, val: String) -> () {
+    pub fn change_tile_value(&mut self, tile_number: usize, val: String) {
         self.tiles[tile_number - 1].tile_value = val;
     }
 
@@ -54,10 +52,10 @@ impl Board {
             vec![3, 5, 7],
         ];
         for i in 0..9 {
-            if self.tiles[i].tile_value == String::from("X") {
+            if self.tiles[i].tile_value == *"X" {
                 x_vals.push(i as i32 + 1);
             }
-            if self.tiles[i].tile_value == String::from("O") {
+            if self.tiles[i].tile_value == *"O" {
                 o_vals.push(i as i32 + 1);
             }
         }
@@ -76,7 +74,7 @@ impl Board {
         0
     }
 
-    pub fn render_exit_message(&mut self) -> () {
+    pub fn render_exit_message(&mut self) {
         print!("{}", BUFFER_STRING);
         println!("All Done! Thanks for playing :)");
         print!("{}", BUFFER_STRING);

@@ -2,7 +2,6 @@ use crate::board::Board;
 use crate::constants::{BUFFER_STRING, ERROR_STRING};
 use crate::player::Player;
 use crate::scoreboard::Scoreboard;
-// ... rest of the code ...
 use std::io::{self, Write};
 
 pub fn tic_tac_toe() {
@@ -38,9 +37,7 @@ pub fn tic_tac_toe() {
             } else if change_players == "N" {
                 print!("{}", BUFFER_STRING);
                 println!("No worries, let's begin!");
-                let tmp_turn = player_x.turn;
-                player_x.turn = player_o.turn;
-                player_o.turn = tmp_turn;
+                std::mem::swap(&mut player_x.turn, &mut player_o.turn);
             }
         }
 
